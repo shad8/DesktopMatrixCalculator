@@ -30,19 +30,19 @@
     {
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.aboutMatrixCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.loadMatrixAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.loadMatrixBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.saveMatrixCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.separatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.calculateSumeCABToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.calculateDifferenceCABToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.calculateDifferenceCBAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.calculateProductCABToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.calculateProductCBAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.aboutMatrixCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.statusStrip1 = new System.Windows.Forms.StatusStrip();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
@@ -71,37 +71,12 @@
       this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
       this.fileToolStripMenuItem.Text = "File";
       // 
-      // editToolStripMenuItem
-      // 
-      this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.calculateSumeCABToolStripMenuItem,
-            this.calculateDifferenceCABToolStripMenuItem,
-            this.calculateDifferenceCBAToolStripMenuItem,
-            this.calculateProductCABToolStripMenuItem,
-            this.calculateProductCBAToolStripMenuItem});
-      this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-      this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-      this.editToolStripMenuItem.Text = "Edit";
-      // 
-      // helpToolStripMenuItem
-      // 
-      this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutMatrixCalculatorToolStripMenuItem});
-      this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-      this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-      this.helpToolStripMenuItem.Text = "Help";
-      // 
-      // aboutMatrixCalculatorToolStripMenuItem
-      // 
-      this.aboutMatrixCalculatorToolStripMenuItem.Name = "aboutMatrixCalculatorToolStripMenuItem";
-      this.aboutMatrixCalculatorToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-      this.aboutMatrixCalculatorToolStripMenuItem.Text = "About Matrix Calculator ";
-      // 
       // loadMatrixAToolStripMenuItem
       // 
       this.loadMatrixAToolStripMenuItem.Name = "loadMatrixAToolStripMenuItem";
       this.loadMatrixAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.loadMatrixAToolStripMenuItem.Text = "Load matrix A";
+      this.loadMatrixAToolStripMenuItem.Click += new System.EventHandler(this.loadMatrixAToolStripMenuItem_Click);
       // 
       // loadMatrixBToolStripMenuItem
       // 
@@ -126,6 +101,18 @@
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
       this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.exitToolStripMenuItem.Text = "Exit";
+      // 
+      // editToolStripMenuItem
+      // 
+      this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calculateSumeCABToolStripMenuItem,
+            this.calculateDifferenceCABToolStripMenuItem,
+            this.calculateDifferenceCBAToolStripMenuItem,
+            this.calculateProductCABToolStripMenuItem,
+            this.calculateProductCBAToolStripMenuItem});
+      this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+      this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+      this.editToolStripMenuItem.Text = "Edit";
       // 
       // calculateSumeCABToolStripMenuItem
       // 
@@ -156,6 +143,20 @@
       this.calculateProductCBAToolStripMenuItem.Name = "calculateProductCBAToolStripMenuItem";
       this.calculateProductCBAToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
       this.calculateProductCBAToolStripMenuItem.Text = "Calculate product C=B*A";
+      // 
+      // helpToolStripMenuItem
+      // 
+      this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutMatrixCalculatorToolStripMenuItem});
+      this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+      this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+      this.helpToolStripMenuItem.Text = "Help";
+      // 
+      // aboutMatrixCalculatorToolStripMenuItem
+      // 
+      this.aboutMatrixCalculatorToolStripMenuItem.Name = "aboutMatrixCalculatorToolStripMenuItem";
+      this.aboutMatrixCalculatorToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+      this.aboutMatrixCalculatorToolStripMenuItem.Text = "About Matrix Calculator ";
       // 
       // statusStrip1
       // 
