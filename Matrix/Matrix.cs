@@ -36,6 +36,8 @@ namespace Math
       this.body = new double[row, column];
     }
 
+    public Matrix() { }
+
     public int Row { get { return row; } }
     public int Column { get { return column; } }
 

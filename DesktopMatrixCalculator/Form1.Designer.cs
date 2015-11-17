@@ -43,10 +43,10 @@
       this.calculateProductCBAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutMatrixCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.listViewMatrixA = new System.Windows.Forms.ListView();
+      this.listViewMatrixB = new System.Windows.Forms.ListView();
+      this.listViewMatrixC = new System.Windows.Forms.ListView();
       this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-      this.listView1 = new System.Windows.Forms.ListView();
-      this.listView2 = new System.Windows.Forms.ListView();
-      this.listView3 = new System.Windows.Forms.ListView();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -103,7 +103,7 @@
       // exitToolStripMenuItem
       // 
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.exitToolStripMenuItem.Text = "Exit";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
@@ -124,30 +124,35 @@
       this.calculateSumeCABToolStripMenuItem.Name = "calculateSumeCABToolStripMenuItem";
       this.calculateSumeCABToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
       this.calculateSumeCABToolStripMenuItem.Text = "Calculate sum C=A+B";
+      this.calculateSumeCABToolStripMenuItem.Click += new System.EventHandler(this.calculateSumeCABToolStripMenuItem_Click);
       // 
       // calculateDifferenceCABToolStripMenuItem
       // 
       this.calculateDifferenceCABToolStripMenuItem.Name = "calculateDifferenceCABToolStripMenuItem";
       this.calculateDifferenceCABToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
       this.calculateDifferenceCABToolStripMenuItem.Text = "Calculate difference C=A-B";
+      this.calculateDifferenceCABToolStripMenuItem.Click += new System.EventHandler(this.calculateDifferenceCABToolStripMenuItem_Click);
       // 
       // calculateDifferenceCBAToolStripMenuItem
       // 
       this.calculateDifferenceCBAToolStripMenuItem.Name = "calculateDifferenceCBAToolStripMenuItem";
       this.calculateDifferenceCBAToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
       this.calculateDifferenceCBAToolStripMenuItem.Text = "Calculate difference C=B-A";
+      this.calculateDifferenceCBAToolStripMenuItem.Click += new System.EventHandler(this.calculateDifferenceCBAToolStripMenuItem_Click);
       // 
       // calculateProductCABToolStripMenuItem
       // 
       this.calculateProductCABToolStripMenuItem.Name = "calculateProductCABToolStripMenuItem";
       this.calculateProductCABToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
       this.calculateProductCABToolStripMenuItem.Text = "Calculate product C=A*B";
+      this.calculateProductCABToolStripMenuItem.Click += new System.EventHandler(this.calculateProductCABToolStripMenuItem_Click);
       // 
       // calculateProductCBAToolStripMenuItem
       // 
       this.calculateProductCBAToolStripMenuItem.Name = "calculateProductCBAToolStripMenuItem";
       this.calculateProductCBAToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
       this.calculateProductCBAToolStripMenuItem.Text = "Calculate product C=B*A";
+      this.calculateProductCBAToolStripMenuItem.Click += new System.EventHandler(this.calculateProductCBAToolStripMenuItem_Click);
       // 
       // helpToolStripMenuItem
       // 
@@ -164,52 +169,49 @@
       this.aboutMatrixCalculatorToolStripMenuItem.Text = "About Matrix Calculator ";
       this.aboutMatrixCalculatorToolStripMenuItem.Click += new System.EventHandler(this.aboutMatrixCalculatorToolStripMenuItem_Click);
       // 
+      // listViewMatrixA
+      // 
+      this.listViewMatrixA.GridLines = true;
+      this.listViewMatrixA.Location = new System.Drawing.Point(0, 24);
+      this.listViewMatrixA.Name = "listViewMatrixA";
+      this.listViewMatrixA.Size = new System.Drawing.Size(234, 315);
+      this.listViewMatrixA.TabIndex = 2;
+      this.listViewMatrixA.UseCompatibleStateImageBehavior = false;
+      // 
+      // listViewMatrixB
+      // 
+      this.listViewMatrixB.GridLines = true;
+      this.listViewMatrixB.Location = new System.Drawing.Point(234, 24);
+      this.listViewMatrixB.Name = "listViewMatrixB";
+      this.listViewMatrixB.Size = new System.Drawing.Size(217, 315);
+      this.listViewMatrixB.TabIndex = 3;
+      this.listViewMatrixB.UseCompatibleStateImageBehavior = false;
+      // 
+      // listViewMatrixC
+      // 
+      this.listViewMatrixC.GridLines = true;
+      this.listViewMatrixC.Location = new System.Drawing.Point(451, 24);
+      this.listViewMatrixC.Name = "listViewMatrixC";
+      this.listViewMatrixC.Size = new System.Drawing.Size(213, 315);
+      this.listViewMatrixC.TabIndex = 4;
+      this.listViewMatrixC.UseCompatibleStateImageBehavior = false;
+      // 
       // statusStrip1
       // 
       this.statusStrip1.Location = new System.Drawing.Point(0, 339);
       this.statusStrip1.Name = "statusStrip1";
       this.statusStrip1.Size = new System.Drawing.Size(663, 22);
       this.statusStrip1.TabIndex = 1;
-      this.statusStrip1.Text = "statusStrip1";
-      // 
-      // listView1
-      // 
-      this.listView1.Dock = System.Windows.Forms.DockStyle.Left;
-      this.listView1.GridLines = true;
-      this.listView1.Location = new System.Drawing.Point(0, 24);
-      this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(234, 315);
-      this.listView1.TabIndex = 2;
-      this.listView1.UseCompatibleStateImageBehavior = false;
-      // 
-      // listView2
-      // 
-      this.listView2.Dock = System.Windows.Forms.DockStyle.Left;
-      this.listView2.GridLines = true;
-      this.listView2.Location = new System.Drawing.Point(234, 24);
-      this.listView2.Name = "listView2";
-      this.listView2.Size = new System.Drawing.Size(217, 315);
-      this.listView2.TabIndex = 3;
-      this.listView2.UseCompatibleStateImageBehavior = false;
-      // 
-      // listView3
-      // 
-      this.listView3.Dock = System.Windows.Forms.DockStyle.Left;
-      this.listView3.GridLines = true;
-      this.listView3.Location = new System.Drawing.Point(451, 24);
-      this.listView3.Name = "listView3";
-      this.listView3.Size = new System.Drawing.Size(213, 315);
-      this.listView3.TabIndex = 4;
-      this.listView3.UseCompatibleStateImageBehavior = false;
+      this.statusStrip1.Text = "Foo";
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(663, 361);
-      this.Controls.Add(this.listView3);
-      this.Controls.Add(this.listView2);
-      this.Controls.Add(this.listView1);
+      this.Controls.Add(this.listViewMatrixC);
+      this.Controls.Add(this.listViewMatrixB);
+      this.Controls.Add(this.listViewMatrixA);
       this.Controls.Add(this.statusStrip1);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
@@ -239,10 +241,10 @@
     private System.Windows.Forms.ToolStripMenuItem calculateDifferenceCBAToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem calculateProductCABToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem calculateProductCBAToolStripMenuItem;
+    private System.Windows.Forms.ListView listViewMatrixA;
+    private System.Windows.Forms.ListView listViewMatrixB;
+    private System.Windows.Forms.ListView listViewMatrixC;
     private System.Windows.Forms.StatusStrip statusStrip1;
-    private System.Windows.Forms.ListView listView1;
-    private System.Windows.Forms.ListView listView2;
-    private System.Windows.Forms.ListView listView3;
   }
 }
 

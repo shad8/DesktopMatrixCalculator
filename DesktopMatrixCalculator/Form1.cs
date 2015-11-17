@@ -9,6 +9,9 @@ namespace DesktopMatrixCalculator
 {
   public partial class Form1 : Form
   {
+    private Matrix A;
+    private Matrix B;
+
     public Form1()
     {
       InitializeComponent();
@@ -16,7 +19,7 @@ namespace DesktopMatrixCalculator
 
     private void loadMatrixAToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      OpendialogFor(listView1);
+      A = OpendialogFor(listViewMatrixA);
     }
 
     private void CreateMyListView(Matrix matrix, ListView listView)
@@ -36,7 +39,7 @@ namespace DesktopMatrixCalculator
       this.Controls.Add(listView);
     }
 
-    private void OpendialogFor(ListView listView)
+    private Matrix OpendialogFor(ListView listView)
     {
       Stream myStream = null;
       OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -58,6 +61,7 @@ namespace DesktopMatrixCalculator
               Matrix matrix = loader.LoadMatrix();
               myStream.Close();
               CreateMyListView(matrix, listView);
+              return matrix;
             }
           }
         }
@@ -66,11 +70,12 @@ namespace DesktopMatrixCalculator
           MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
         }
       }
+      return new Matrix();
     }
 
     private void loadMatrixBToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      OpendialogFor(listView2);
+      B = OpendialogFor(listViewMatrixB);
     }
 
     private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,6 +86,41 @@ namespace DesktopMatrixCalculator
     private void aboutMatrixCalculatorToolStripMenuItem_Click(object sender, EventArgs e)
     {
       MessageBox.Show("Matrix calculator for simple matrix operations.\nAuthor: Urszula Hołodniak");
+    }
+
+    private void calculateSumeCABToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Matrix C = A + B;
+      listViewMatrixC.Clear();
+      CreateMyListView(C, listViewMatrixC);
+    }
+
+    private void calculateDifferenceCABToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Matrix C = A - B;
+      listViewMatrixC.Clear();
+      CreateMyListView(C, listViewMatrixC);
+    }
+
+    private void calculateDifferenceCBAToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Matrix C = B - A;
+      listViewMatrixC.Clear();
+      CreateMyListView(C, listViewMatrixC);
+    }
+
+    private void calculateProductCABToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Matrix C = A * B;
+      listViewMatrixC.Clear();
+      CreateMyListView(C, listViewMatrixC);
+    }
+
+    private void calculateProductCBAToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Matrix C = B * A;
+      listViewMatrixC.Clear();
+      CreateMyListView(C, listViewMatrixC);
     }
   }
 }
