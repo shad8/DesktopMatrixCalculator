@@ -16,6 +16,28 @@ namespace DesktopMatrixCalculator
 
     private void loadMatrixAToolStripMenuItem_Click(object sender, EventArgs e)
     {
+      OpendialogFor(listView1);
+    }
+
+    private void CreateMyListView(Matrix matrix, ListView listView)
+    {
+      listView.HeaderStyle = ColumnHeaderStyle.None;
+      listView.View = View.Details;
+      listView.GridLines = true;
+
+      for (int i = 0; i < matrix.Row; i++)
+      {
+        ListViewItem item = new ListViewItem(matrix.GetRow(i));
+        listView.Items.Add(item);
+      }
+      for (int i = 0; i < matrix.Column; i++)
+        listView.Columns.Add("Column");
+
+      this.Controls.Add(listView);
+    }
+
+    private void OpendialogFor(ListView listView)
+    {
       Stream myStream = null;
       OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
@@ -33,9 +55,9 @@ namespace DesktopMatrixCalculator
             using (myStream)
             {
               Loader loader = new Loader(openFileDialog1.FileName);
-              Matrix A = loader.LoadMatrix();
+              Matrix matrix = loader.LoadMatrix();
               myStream.Close();
-              CreateMyListView(A);
+              CreateMyListView(matrix, listView);
             }
           }
         }
@@ -46,23 +68,14 @@ namespace DesktopMatrixCalculator
       }
     }
 
-    private void CreateMyListView(Matrix matrix)
+    private void loadMatrixBToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      //ListView listView1 = new ListView();
-      //listView1.Bounds = new Rectangle(new Point(15, 30), new Size(matrix.Row * 40, matrix.Column * 40));
-      listView1.HeaderStyle = ColumnHeaderStyle.None;
-      listView1.View = View.Details;
-      listView1.GridLines = true;
+      OpendialogFor(listView2);
+    }
 
-      for (int i = 0; i < matrix.Row; i++)
-      {
-        ListViewItem item = new ListViewItem(matrix.GetRow(i));
-        listView1.Items.Add(item);
-      }
-      for (int i = 0; i < matrix.Column; i++)
-        listView1.Columns.Add("Column");
-
-      this.Controls.Add(listView1);
+    private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Environment.Exit(0);
     }
   }
 }

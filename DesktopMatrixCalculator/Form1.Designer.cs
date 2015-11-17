@@ -86,6 +86,7 @@
       this.loadMatrixBToolStripMenuItem.Name = "loadMatrixBToolStripMenuItem";
       this.loadMatrixBToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.loadMatrixBToolStripMenuItem.Text = "Load matrix B";
+      this.loadMatrixBToolStripMenuItem.Click += new System.EventHandler(this.loadMatrixBToolStripMenuItem_Click);
       // 
       // saveMatrixCToolStripMenuItem
       // 
@@ -102,8 +103,9 @@
       // exitToolStripMenuItem
       // 
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.exitToolStripMenuItem.Text = "Exit";
+      this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
       // editToolStripMenuItem
       // 
@@ -171,25 +173,31 @@
       // 
       // listView1
       // 
-      this.listView1.Location = new System.Drawing.Point(12, 27);
+      this.listView1.Dock = System.Windows.Forms.DockStyle.Left;
+      this.listView1.GridLines = true;
+      this.listView1.Location = new System.Drawing.Point(0, 24);
       this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(209, 309);
+      this.listView1.Size = new System.Drawing.Size(234, 315);
       this.listView1.TabIndex = 2;
       this.listView1.UseCompatibleStateImageBehavior = false;
       // 
       // listView2
       // 
-      this.listView2.Location = new System.Drawing.Point(227, 27);
+      this.listView2.Dock = System.Windows.Forms.DockStyle.Left;
+      this.listView2.GridLines = true;
+      this.listView2.Location = new System.Drawing.Point(234, 24);
       this.listView2.Name = "listView2";
-      this.listView2.Size = new System.Drawing.Size(210, 309);
+      this.listView2.Size = new System.Drawing.Size(217, 315);
       this.listView2.TabIndex = 3;
       this.listView2.UseCompatibleStateImageBehavior = false;
       // 
       // listView3
       // 
-      this.listView3.Location = new System.Drawing.Point(443, 27);
+      this.listView3.Dock = System.Windows.Forms.DockStyle.Left;
+      this.listView3.GridLines = true;
+      this.listView3.Location = new System.Drawing.Point(451, 24);
       this.listView3.Name = "listView3";
-      this.listView3.Size = new System.Drawing.Size(208, 309);
+      this.listView3.Size = new System.Drawing.Size(213, 315);
       this.listView3.TabIndex = 4;
       this.listView3.UseCompatibleStateImageBehavior = false;
       // 
