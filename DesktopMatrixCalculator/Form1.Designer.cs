@@ -1,6 +1,6 @@
 ﻿namespace DesktopMatrixCalculator
 {
-  partial class Form1
+  partial class DesktopMatrixCalculator
   {
     /// <summary>
     /// Required designer variable.
@@ -79,14 +79,14 @@
       // loadMatrixAToolStripMenuItem
       // 
       this.loadMatrixAToolStripMenuItem.Name = "loadMatrixAToolStripMenuItem";
-      this.loadMatrixAToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.loadMatrixAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.loadMatrixAToolStripMenuItem.Text = "Load matrix A";
       this.loadMatrixAToolStripMenuItem.Click += new System.EventHandler(this.loadMatrixAToolStripMenuItem_Click);
       // 
       // loadMatrixBToolStripMenuItem
       // 
       this.loadMatrixBToolStripMenuItem.Name = "loadMatrixBToolStripMenuItem";
-      this.loadMatrixBToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.loadMatrixBToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.loadMatrixBToolStripMenuItem.Text = "Load matrix B";
       this.loadMatrixBToolStripMenuItem.Click += new System.EventHandler(this.loadMatrixBToolStripMenuItem_Click);
       // 
@@ -100,13 +100,13 @@
       // separatorToolStripMenuItem
       // 
       this.separatorToolStripMenuItem.Name = "separatorToolStripMenuItem";
-      this.separatorToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.separatorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.separatorToolStripMenuItem.Text = "Separator";
       // 
       // exitToolStripMenuItem
       // 
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.exitToolStripMenuItem.Text = "Exit";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
@@ -214,7 +214,7 @@
       this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
       this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
       // 
-      // Form1
+      // DesktopMatrixCalculator
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,9 +224,11 @@
       this.Controls.Add(this.listViewMatrixA);
       this.Controls.Add(this.statusStripOperations);
       this.Controls.Add(this.menuStrip1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MainMenuStrip = this.menuStrip1;
-      this.Name = "Form1";
-      this.Text = "Form1";
+      this.MaximizeBox = false;
+      this.Name = "DesktopMatrixCalculator";
+      this.Text = "Matrix Calculator";
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       this.statusStripOperations.ResumeLayout(false);
