@@ -162,6 +162,7 @@
       this.aboutMatrixCalculatorToolStripMenuItem.Name = "aboutMatrixCalculatorToolStripMenuItem";
       this.aboutMatrixCalculatorToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
       this.aboutMatrixCalculatorToolStripMenuItem.Text = "About Matrix Calculator ";
+      this.aboutMatrixCalculatorToolStripMenuItem.Click += new System.EventHandler(this.aboutMatrixCalculatorToolStripMenuItem_Click);
       // 
       // statusStrip1
       // 

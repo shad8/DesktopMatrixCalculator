@@ -77,5 +77,10 @@ namespace DesktopMatrixCalculator
     {
       Environment.Exit(0);
     }
+
+    private void aboutMatrixCalculatorToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      MessageBox.Show("Matrix calculator for simple matrix operations.\nAuthor: Urszula Hołodniak");
+    }
   }
 }
