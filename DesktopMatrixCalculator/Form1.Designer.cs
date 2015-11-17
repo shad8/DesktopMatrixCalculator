@@ -46,8 +46,10 @@
       this.listViewMatrixA = new System.Windows.Forms.ListView();
       this.listViewMatrixB = new System.Windows.Forms.ListView();
       this.listViewMatrixC = new System.Windows.Forms.ListView();
-      this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+      this.statusStripOperations = new System.Windows.Forms.StatusStrip();
+      this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
       this.menuStrip1.SuspendLayout();
+      this.statusStripOperations.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -91,8 +93,9 @@
       // saveMatrixCToolStripMenuItem
       // 
       this.saveMatrixCToolStripMenuItem.Name = "saveMatrixCToolStripMenuItem";
-      this.saveMatrixCToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.saveMatrixCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.saveMatrixCToolStripMenuItem.Text = "Save matrix C";
+      this.saveMatrixCToolStripMenuItem.Click += new System.EventHandler(this.saveMatrixCToolStripMenuItem_Click);
       // 
       // separatorToolStripMenuItem
       // 
@@ -196,13 +199,20 @@
       this.listViewMatrixC.TabIndex = 4;
       this.listViewMatrixC.UseCompatibleStateImageBehavior = false;
       // 
-      // statusStrip1
+      // statusStripOperations
       // 
-      this.statusStrip1.Location = new System.Drawing.Point(0, 339);
-      this.statusStrip1.Name = "statusStrip1";
-      this.statusStrip1.Size = new System.Drawing.Size(663, 22);
-      this.statusStrip1.TabIndex = 1;
-      this.statusStrip1.Text = "Foo";
+      this.statusStripOperations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+      this.statusStripOperations.Location = new System.Drawing.Point(0, 339);
+      this.statusStripOperations.Name = "statusStripOperations";
+      this.statusStripOperations.Size = new System.Drawing.Size(663, 22);
+      this.statusStripOperations.TabIndex = 1;
+      this.statusStripOperations.Text = "Foo";
+      // 
+      // toolStripStatusLabel1
+      // 
+      this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+      this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
       // 
       // Form1
       // 
@@ -212,13 +222,15 @@
       this.Controls.Add(this.listViewMatrixC);
       this.Controls.Add(this.listViewMatrixB);
       this.Controls.Add(this.listViewMatrixA);
-      this.Controls.Add(this.statusStrip1);
+      this.Controls.Add(this.statusStripOperations);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
       this.Name = "Form1";
       this.Text = "Form1";
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
+      this.statusStripOperations.ResumeLayout(false);
+      this.statusStripOperations.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -244,7 +256,8 @@
     private System.Windows.Forms.ListView listViewMatrixA;
     private System.Windows.Forms.ListView listViewMatrixB;
     private System.Windows.Forms.ListView listViewMatrixC;
-    private System.Windows.Forms.StatusStrip statusStrip1;
+    private System.Windows.Forms.StatusStrip statusStripOperations;
+    private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
   }
 }
 

@@ -126,50 +126,18 @@ namespace Math
       return sum;
     }
 
-    public void Print()
-    {
-      Console.WriteLine("" + row + " " + column + "\n");
-      for (int i = 0; i < row; i++)
-      {
-        for (int j = 0; j < column; j++)
-        {
-          Console.Write("\t" + IndexOf(i, j));
-        }
-        Console.Write(Environment.NewLine + Environment.NewLine);
-      }
-    }
-
-    public void SaveToFile(string path)
-    {
-      try
-      {
-        System.IO.StreamWriter file = new System.IO.StreamWriter(path);
-        string dimension = row + " " + column;
-        file.WriteLine(dimension);
-        for (int i = 0; i < row; i++)
-        {
-          for (int j = 0; j < column; j++)
-          {
-            file.Write("\t" + IndexOf(i, j));
-          }
-          file.WriteLine(Environment.NewLine);
-        }
-        file.Close();
-        Console.WriteLine("The operation completed successfully");
-      }
-      catch (Exception e)
-      {
-        Console.WriteLine(e.Message);
-      }
-    }
-
-    //TODO retutn double[] not string[]
-    public string[] GetRow(int nuberOfRow)
+     //TODO retutn double[] not string[]
+    public string[] GetRows(int nuberOfRow)
     {
       List<string> row = new List<string>();
       for (int columnNum = 0; columnNum < column; columnNum++)
         row.Add(IndexOf(nuberOfRow, columnNum).ToString());
       return row.ToArray();
+    }
+
+    public string Dimension()
+    {
+      return row + " " + column;
     }
   }
 }

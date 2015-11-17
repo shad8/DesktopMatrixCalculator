@@ -3,7 +3,6 @@ using System.IO;
 using System.Windows.Forms;
 using Math;
 using MatrixFileManager;
-using System.Drawing;
 
 namespace DesktopMatrixCalculator
 {
@@ -11,6 +10,7 @@ namespace DesktopMatrixCalculator
   {
     private Matrix A;
     private Matrix B;
+    private Matrix C;
 
     public Form1()
     {
@@ -19,18 +19,19 @@ namespace DesktopMatrixCalculator
 
     private void loadMatrixAToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      A = OpendialogFor(listViewMatrixA);
+      A = OpenDialogFor(listViewMatrixA);
     }
 
     private void CreateMyListView(Matrix matrix, ListView listView)
     {
+      listView.Clear();
       listView.HeaderStyle = ColumnHeaderStyle.None;
       listView.View = View.Details;
       listView.GridLines = true;
 
       for (int i = 0; i < matrix.Row; i++)
       {
-        ListViewItem item = new ListViewItem(matrix.GetRow(i));
+        ListViewItem item = new ListViewItem(matrix.GetRows(i));
         listView.Items.Add(item);
       }
       for (int i = 0; i < matrix.Column; i++)
@@ -39,7 +40,7 @@ namespace DesktopMatrixCalculator
       this.Controls.Add(listView);
     }
 
-    private Matrix OpendialogFor(ListView listView)
+    private Matrix OpenDialogFor(ListView listView)
     {
       Stream myStream = null;
       OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -61,6 +62,9 @@ namespace DesktopMatrixCalculator
               Matrix matrix = loader.LoadMatrix();
               myStream.Close();
               CreateMyListView(matrix, listView);
+              
+              toolStripStatusLabel1.Text = "Matrix has been loaded...";
+              statusStripOperations.Refresh();
               return matrix;
             }
           }
@@ -75,7 +79,7 @@ namespace DesktopMatrixCalculator
 
     private void loadMatrixBToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      B = OpendialogFor(listViewMatrixB);
+      B = OpenDialogFor(listViewMatrixB);
     }
 
     private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,37 +94,70 @@ namespace DesktopMatrixCalculator
 
     private void calculateSumeCABToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Matrix C = A + B;
-      listViewMatrixC.Clear();
+      C = A + B;
       CreateMyListView(C, listViewMatrixC);
+      toolStripStatusLabel1.Text = "Adding successful";
+      statusStripOperations.Refresh();
     }
 
     private void calculateDifferenceCABToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Matrix C = A - B;
-      listViewMatrixC.Clear();
+      C = A - B;
       CreateMyListView(C, listViewMatrixC);
+      toolStripStatusLabel1.Text = "Subtraction successful";
+      statusStripOperations.Refresh();
     }
 
     private void calculateDifferenceCBAToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Matrix C = B - A;
-      listViewMatrixC.Clear();
+      C = B - A;
       CreateMyListView(C, listViewMatrixC);
+      toolStripStatusLabel1.Text = "Subtraction successful";
+      statusStripOperations.Refresh();
     }
 
     private void calculateProductCABToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Matrix C = A * B;
-      listViewMatrixC.Clear();
+      C = A * B;
       CreateMyListView(C, listViewMatrixC);
+      toolStripStatusLabel1.Text = "Multiplication  successful";
+      statusStripOperations.Refresh();
     }
 
     private void calculateProductCBAToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Matrix C = B * A;
-      listViewMatrixC.Clear();
+      C = B * A;
       CreateMyListView(C, listViewMatrixC);
+      toolStripStatusLabel1.Text = "Multiplication  successful";
+      statusStripOperations.Refresh();
+    }
+
+    private void saveMatrixCToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Stream myStream;
+      SaveFileDialog saveFileDialogMatrix = new SaveFileDialog();
+
+      saveFileDialogMatrix.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+      saveFileDialogMatrix.DefaultExt = "txt";
+      saveFileDialogMatrix.FilterIndex = 2;
+      saveFileDialogMatrix.RestoreDirectory = true;
+
+      if (saveFileDialogMatrix.ShowDialog() == DialogResult.OK)
+      {
+        if ((myStream = saveFileDialogMatrix.OpenFile()) != null)
+        {
+          try
+          {
+            myStream.Close();
+            new Writer(saveFileDialogMatrix.FileName, C).WriterToFile();
+            MessageBox.Show("File was save successfuly");
+          }
+          catch (Exception ex)
+          {
+            MessageBox.Show("Error: Could not save file on disk. Original error: " + ex.Message);
+          }
+        }
+      }
     }
   }
 }
