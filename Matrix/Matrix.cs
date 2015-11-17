@@ -36,6 +36,9 @@ namespace Math
       this.body = new double[row, column];
     }
 
+    public int Row { get { return row; } }
+    public int Column { get { return column; } }
+
     public double IndexOf(int row, int column, double? newValue = null)
     {
       if (newValue.HasValue)
@@ -156,6 +159,15 @@ namespace Math
       {
         Console.WriteLine(e.Message);
       }
+    }
+
+    //TODO retutn double[] not string[]
+    public string[] GetRow(int nuberOfRow)
+    {
+      List<string> row = new List<string>();
+      for (int columnNum = 0; columnNum < column; columnNum++)
+        row.Add(IndexOf(nuberOfRow, columnNum).ToString());
+      return row.ToArray();
     }
   }
 }

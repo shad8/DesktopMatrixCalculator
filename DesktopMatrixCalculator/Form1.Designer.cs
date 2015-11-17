@@ -44,6 +44,9 @@
       this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutMatrixCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+      this.listView1 = new System.Windows.Forms.ListView();
+      this.listView2 = new System.Windows.Forms.ListView();
+      this.listView3 = new System.Windows.Forms.ListView();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -74,32 +77,32 @@
       // loadMatrixAToolStripMenuItem
       // 
       this.loadMatrixAToolStripMenuItem.Name = "loadMatrixAToolStripMenuItem";
-      this.loadMatrixAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.loadMatrixAToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.loadMatrixAToolStripMenuItem.Text = "Load matrix A";
       this.loadMatrixAToolStripMenuItem.Click += new System.EventHandler(this.loadMatrixAToolStripMenuItem_Click);
       // 
       // loadMatrixBToolStripMenuItem
       // 
       this.loadMatrixBToolStripMenuItem.Name = "loadMatrixBToolStripMenuItem";
-      this.loadMatrixBToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.loadMatrixBToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.loadMatrixBToolStripMenuItem.Text = "Load matrix B";
       // 
       // saveMatrixCToolStripMenuItem
       // 
       this.saveMatrixCToolStripMenuItem.Name = "saveMatrixCToolStripMenuItem";
-      this.saveMatrixCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.saveMatrixCToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.saveMatrixCToolStripMenuItem.Text = "Save matrix C";
       // 
       // separatorToolStripMenuItem
       // 
       this.separatorToolStripMenuItem.Name = "separatorToolStripMenuItem";
-      this.separatorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.separatorToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.separatorToolStripMenuItem.Text = "Separator";
       // 
       // exitToolStripMenuItem
       // 
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.exitToolStripMenuItem.Text = "Exit";
       // 
       // editToolStripMenuItem
@@ -166,11 +169,38 @@
       this.statusStrip1.TabIndex = 1;
       this.statusStrip1.Text = "statusStrip1";
       // 
+      // listView1
+      // 
+      this.listView1.Location = new System.Drawing.Point(12, 27);
+      this.listView1.Name = "listView1";
+      this.listView1.Size = new System.Drawing.Size(209, 309);
+      this.listView1.TabIndex = 2;
+      this.listView1.UseCompatibleStateImageBehavior = false;
+      // 
+      // listView2
+      // 
+      this.listView2.Location = new System.Drawing.Point(227, 27);
+      this.listView2.Name = "listView2";
+      this.listView2.Size = new System.Drawing.Size(210, 309);
+      this.listView2.TabIndex = 3;
+      this.listView2.UseCompatibleStateImageBehavior = false;
+      // 
+      // listView3
+      // 
+      this.listView3.Location = new System.Drawing.Point(443, 27);
+      this.listView3.Name = "listView3";
+      this.listView3.Size = new System.Drawing.Size(208, 309);
+      this.listView3.TabIndex = 4;
+      this.listView3.UseCompatibleStateImageBehavior = false;
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(663, 361);
+      this.Controls.Add(this.listView3);
+      this.Controls.Add(this.listView2);
+      this.Controls.Add(this.listView1);
       this.Controls.Add(this.statusStrip1);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
@@ -201,6 +231,9 @@
     private System.Windows.Forms.ToolStripMenuItem calculateProductCABToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem calculateProductCBAToolStripMenuItem;
     private System.Windows.Forms.StatusStrip statusStrip1;
+    private System.Windows.Forms.ListView listView1;
+    private System.Windows.Forms.ListView listView2;
+    private System.Windows.Forms.ListView listView3;
   }
 }
 

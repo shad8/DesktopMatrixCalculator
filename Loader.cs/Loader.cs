@@ -20,13 +20,14 @@ namespace MatrixFileManager
       string body = " ";
 
       string[] line = streamReader.ReadLine().Split(' ');
-      int column = Int32.Parse(line[0]);
-      int row = Int32.Parse(line[1]);
+      int column = Int32.Parse(line[1]);
+      int row = Int32.Parse(line[0]);
       while (streamReader.Peek() >= 1)
       {
         body = body + streamReader.ReadLine();
       }
-      double[] marixBody = body.ConvertStringToDoubleArray('\t');
+      streamReader.Close();
+      double[] marixBody = body.ConvertStringToDoubleArray("\t");
       return new Matrix(marixBody, row, column);
     }
   }
