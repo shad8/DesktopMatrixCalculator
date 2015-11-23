@@ -91,7 +91,7 @@ namespace DesktopMatrixCalculator
 
     private void aboutMatrixCalculatorToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      MessageBox.Show("Matrix calculator for simple matrix operations.\nAuthor: Urszula Hołodniak");
+      MessageBox.Show("Matrix calculator for simple matrix operations.\nAuthor: Urszula Hołodniak", "About Matrx Calculator", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void calculateSumeCABToolStripMenuItem_Click(object sender, EventArgs e)
