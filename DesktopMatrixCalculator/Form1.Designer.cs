@@ -48,6 +48,11 @@
       this.listViewMatrixC = new System.Windows.Forms.ListView();
       this.statusStripOperations = new System.Windows.Forms.StatusStrip();
       this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+      this.buttonAddAB = new System.Windows.Forms.Button();
+      this.buttonSubtractionAB = new System.Windows.Forms.Button();
+      this.buttonSubtractionBA = new System.Windows.Forms.Button();
+      this.button4 = new System.Windows.Forms.Button();
+      this.button5 = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.statusStripOperations.SuspendLayout();
       this.SuspendLayout();
@@ -79,34 +84,34 @@
       // loadMatrixAToolStripMenuItem
       // 
       this.loadMatrixAToolStripMenuItem.Name = "loadMatrixAToolStripMenuItem";
-      this.loadMatrixAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.loadMatrixAToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.loadMatrixAToolStripMenuItem.Text = "Load matrix A";
       this.loadMatrixAToolStripMenuItem.Click += new System.EventHandler(this.loadMatrixAToolStripMenuItem_Click);
       // 
       // loadMatrixBToolStripMenuItem
       // 
       this.loadMatrixBToolStripMenuItem.Name = "loadMatrixBToolStripMenuItem";
-      this.loadMatrixBToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.loadMatrixBToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.loadMatrixBToolStripMenuItem.Text = "Load matrix B";
       this.loadMatrixBToolStripMenuItem.Click += new System.EventHandler(this.loadMatrixBToolStripMenuItem_Click);
       // 
       // saveMatrixCToolStripMenuItem
       // 
       this.saveMatrixCToolStripMenuItem.Name = "saveMatrixCToolStripMenuItem";
-      this.saveMatrixCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.saveMatrixCToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.saveMatrixCToolStripMenuItem.Text = "Save matrix C";
       this.saveMatrixCToolStripMenuItem.Click += new System.EventHandler(this.saveMatrixCToolStripMenuItem_Click);
       // 
       // separatorToolStripMenuItem
       // 
       this.separatorToolStripMenuItem.Name = "separatorToolStripMenuItem";
-      this.separatorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.separatorToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.separatorToolStripMenuItem.Text = "Separator";
       // 
       // exitToolStripMenuItem
       // 
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.exitToolStripMenuItem.Text = "Exit";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
@@ -175,27 +180,27 @@
       // listViewMatrixA
       // 
       this.listViewMatrixA.GridLines = true;
-      this.listViewMatrixA.Location = new System.Drawing.Point(0, 24);
+      this.listViewMatrixA.Location = new System.Drawing.Point(0, 56);
       this.listViewMatrixA.Name = "listViewMatrixA";
-      this.listViewMatrixA.Size = new System.Drawing.Size(234, 315);
+      this.listViewMatrixA.Size = new System.Drawing.Size(234, 283);
       this.listViewMatrixA.TabIndex = 2;
       this.listViewMatrixA.UseCompatibleStateImageBehavior = false;
       // 
       // listViewMatrixB
       // 
       this.listViewMatrixB.GridLines = true;
-      this.listViewMatrixB.Location = new System.Drawing.Point(234, 24);
+      this.listViewMatrixB.Location = new System.Drawing.Point(234, 56);
       this.listViewMatrixB.Name = "listViewMatrixB";
-      this.listViewMatrixB.Size = new System.Drawing.Size(217, 315);
+      this.listViewMatrixB.Size = new System.Drawing.Size(217, 283);
       this.listViewMatrixB.TabIndex = 3;
       this.listViewMatrixB.UseCompatibleStateImageBehavior = false;
       // 
       // listViewMatrixC
       // 
       this.listViewMatrixC.GridLines = true;
-      this.listViewMatrixC.Location = new System.Drawing.Point(451, 24);
+      this.listViewMatrixC.Location = new System.Drawing.Point(451, 56);
       this.listViewMatrixC.Name = "listViewMatrixC";
-      this.listViewMatrixC.Size = new System.Drawing.Size(213, 315);
+      this.listViewMatrixC.Size = new System.Drawing.Size(213, 283);
       this.listViewMatrixC.TabIndex = 4;
       this.listViewMatrixC.UseCompatibleStateImageBehavior = false;
       // 
@@ -214,11 +219,66 @@
       this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
       this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
       // 
+      // buttonAddAB
+      // 
+      this.buttonAddAB.Location = new System.Drawing.Point(12, 27);
+      this.buttonAddAB.Name = "buttonAddAB";
+      this.buttonAddAB.Size = new System.Drawing.Size(75, 23);
+      this.buttonAddAB.TabIndex = 5;
+      this.buttonAddAB.Text = "C = A + B";
+      this.buttonAddAB.UseVisualStyleBackColor = true;
+      this.buttonAddAB.Click += new System.EventHandler(this.buttonAddAB_Click);
+      // 
+      // buttonSubtractionAB
+      // 
+      this.buttonSubtractionAB.Location = new System.Drawing.Point(93, 27);
+      this.buttonSubtractionAB.Name = "buttonSubtractionAB";
+      this.buttonSubtractionAB.Size = new System.Drawing.Size(75, 23);
+      this.buttonSubtractionAB.TabIndex = 6;
+      this.buttonSubtractionAB.Text = "C = A - B";
+      this.buttonSubtractionAB.UseVisualStyleBackColor = true;
+      this.buttonSubtractionAB.Click += new System.EventHandler(this.buttonSubtractionAB_Click);
+      // 
+      // buttonSubtractionBA
+      // 
+      this.buttonSubtractionBA.Location = new System.Drawing.Point(174, 27);
+      this.buttonSubtractionBA.Name = "buttonSubtractionBA";
+      this.buttonSubtractionBA.Size = new System.Drawing.Size(75, 23);
+      this.buttonSubtractionBA.TabIndex = 7;
+      this.buttonSubtractionBA.Text = "C = B - A";
+      this.buttonSubtractionBA.UseVisualStyleBackColor = true;
+      this.buttonSubtractionBA.Click += new System.EventHandler(this.buttonSubtractionBA_Click);
+      // 
+      // button4
+      // 
+      this.button4.Location = new System.Drawing.Point(255, 27);
+      this.button4.Name = "button4";
+      this.button4.Size = new System.Drawing.Size(75, 23);
+      this.button4.TabIndex = 8;
+      this.button4.Text = "C = A * B";
+      this.button4.UseVisualStyleBackColor = true;
+      this.button4.Click += new System.EventHandler(this.buttonMultiplicationAB);
+      // 
+      // button5
+      // 
+      this.button5.Location = new System.Drawing.Point(336, 27);
+      this.button5.Name = "button5";
+      this.button5.Size = new System.Drawing.Size(75, 23);
+      this.button5.TabIndex = 9;
+      this.button5.Text = "C = B * A";
+      this.button5.UseVisualStyleBackColor = true;
+      this.button5.Click += new System.EventHandler(this.buttonMultiplicationBA);
+      // 
       // DesktopMatrixCalculator
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(663, 361);
+      this.Controls.Add(this.button5);
+      this.Controls.Add(this.button4);
+      this.Controls.Add(this.buttonSubtractionBA);
+      this.Controls.Add(this.buttonSubtractionAB);
+      this.Controls.Add(this.buttonAddAB);
       this.Controls.Add(this.listViewMatrixC);
       this.Controls.Add(this.listViewMatrixB);
       this.Controls.Add(this.listViewMatrixA);
@@ -260,6 +320,11 @@
     private System.Windows.Forms.ListView listViewMatrixC;
     private System.Windows.Forms.StatusStrip statusStripOperations;
     private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+    private System.Windows.Forms.Button buttonAddAB;
+    private System.Windows.Forms.Button buttonSubtractionAB;
+    private System.Windows.Forms.Button buttonSubtractionBA;
+    private System.Windows.Forms.Button button4;
+    private System.Windows.Forms.Button button5;
   }
 }
 

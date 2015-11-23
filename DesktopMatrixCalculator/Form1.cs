@@ -71,7 +71,7 @@ namespace DesktopMatrixCalculator
         }
         catch (Exception ex)
         {
-          MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+          MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
           toolStripStatusLabel1.Text = "Error: Could not read file from disk.";
           statusStripOperations.Refresh();
         }
@@ -96,89 +96,27 @@ namespace DesktopMatrixCalculator
 
     private void calculateSumeCABToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      try
-      {
-        C = A + B;
-        CreateMyListView(C, listViewMatrixC);
-        toolStripStatusLabel1.Text = "Adding successful";
-        statusStripOperations.Refresh();
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show("Adding Error: " + ex.Message);
-        toolStripStatusLabel1.Text = "Adding Error";
-        statusStripOperations.Refresh();
-      }      
+      Addition();
     }
 
     private void calculateDifferenceCABToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      try
-      {
-        C = A - B;
-        CreateMyListView(C, listViewMatrixC);
-        toolStripStatusLabel1.Text = "Subtraction successful";
-        statusStripOperations.Refresh();
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show("Subtraction Error: " + ex.Message);
-        toolStripStatusLabel1.Text = "Subtraction Error";
-        statusStripOperations.Refresh();
-      }
-
+      Subtraction(A, B);
     }
 
     private void calculateDifferenceCBAToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      try
-      {
-        C = B - A;
-        CreateMyListView(C, listViewMatrixC);
-        toolStripStatusLabel1.Text = "Subtraction successful";
-        statusStripOperations.Refresh();
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show("Operation Error: " + ex.Message);
-        toolStripStatusLabel1.Text = "Operation Error";
-        statusStripOperations.Refresh();
-      }
-      
+      Subtraction(B, A);      
     }
 
     private void calculateProductCABToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      try
-      {
-        C = A * B;
-        CreateMyListView(C, listViewMatrixC);
-        toolStripStatusLabel1.Text = "Multiplication successful";
-        statusStripOperations.Refresh();
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show("Multiplication Error: " + ex.Message);
-        toolStripStatusLabel1.Text = "Multiplication Error";
-        statusStripOperations.Refresh();
-      }
+      Multiplication(A, B);
     }
 
     private void calculateProductCBAToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      try
-      {
-        C = B * A;
-        CreateMyListView(C, listViewMatrixC);
-        toolStripStatusLabel1.Text = "Multiplication successful";
-        statusStripOperations.Refresh();
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show("Multiplication Error: " + ex.Message);
-        toolStripStatusLabel1.Text = "Multiplication Error";
-        statusStripOperations.Refresh();
-      }
+      Multiplication(B, A);
     }
 
     private void saveMatrixCToolStripMenuItem_Click(object sender, EventArgs e)
@@ -205,11 +143,81 @@ namespace DesktopMatrixCalculator
           }
           catch (Exception ex)
           {
-            MessageBox.Show("Error: Could not save file on disk. Original error: " + ex.Message);
+            MessageBox.Show("Error: Could not save file on disk. Original error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             toolStripStatusLabel1.Text = "Error: Could not save file on disk.";
             statusStripOperations.Refresh();
           }
         }
+      }
+    }
+
+    private void buttonMultiplicationAB(object sender, EventArgs e)
+    {
+      Multiplication(A, B);
+    }
+    private void buttonMultiplicationBA(object sender, EventArgs e)
+    {
+      Multiplication(B, A);
+    }
+    private void buttonAddAB_Click(object sender, EventArgs e)
+    {
+      Addition();
+    }
+    private void buttonSubtractionAB_Click(object sender, EventArgs e)
+    {
+      Subtraction(A, B);
+    }
+    private void buttonSubtractionBA_Click(object sender, EventArgs e)
+    {
+      Subtraction(B, A);
+    }
+
+    private void Addition()
+    {
+      try
+      {
+        C = A + B;
+        CreateMyListView(C, listViewMatrixC);
+        toolStripStatusLabel1.Text = "Adding successful";
+        statusStripOperations.Refresh();
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show("Adding Error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        toolStripStatusLabel1.Text = "Adding Error";
+        statusStripOperations.Refresh();
+      }
+    }
+    private void Subtraction(Matrix firstElement, Matrix secondElement)
+    {
+      try
+      {
+        C = firstElement - secondElement;
+        CreateMyListView(C, listViewMatrixC);
+        toolStripStatusLabel1.Text = "Subtraction successful";
+        statusStripOperations.Refresh();
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show("Operation Error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        toolStripStatusLabel1.Text = "Operation Error";
+        statusStripOperations.Refresh();
+      }
+    }
+    private void Multiplication(Matrix firstElement, Matrix secondElement)
+    {
+      try
+      {
+        C = firstElement * secondElement;
+        CreateMyListView(C, listViewMatrixC);
+        toolStripStatusLabel1.Text = "Multiplication successful";
+        statusStripOperations.Refresh();
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show("Multiplication Error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        toolStripStatusLabel1.Text = "Multiplication Error";
+        statusStripOperations.Refresh();
       }
     }
   }
