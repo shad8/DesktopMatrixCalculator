@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopMatrixCalculator", "DesktopMatrixCalculator\DesktopMatrixCalculator.csproj", "{2164D947-0C43-41BD-BB72-26721DB1CB2B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8508CF04-BE1B-492B-B8FB-5AE7629225F8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixFileManager.cs", "Loader.cs\MatrixFileManager.cs.csproj", "{ACD5F44E-1E41-4A0D-9D85-7AB32F974CBC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math", "Matrix\Math.csproj", "{6D96FC50-F9AB-4000-B8A2-97796B01268B}"
@@ -32,9 +30,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{ACD5F44E-1E41-4A0D-9D85-7AB32F974CBC} = {8508CF04-BE1B-492B-B8FB-5AE7629225F8}
-		{6D96FC50-F9AB-4000-B8A2-97796B01268B} = {8508CF04-BE1B-492B-B8FB-5AE7629225F8}
 	EndGlobalSection
 EndGlobal

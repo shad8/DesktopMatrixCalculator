@@ -45,7 +45,7 @@ namespace DesktopMatrixCalculator
       Stream myStream = null;
       OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-      openFileDialog1.InitialDirectory = "c:\\";
+      openFileDialog1.InitialDirectory = @"c:\\";
       openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
       openFileDialog1.FilterIndex = 2;
       openFileDialog1.RestoreDirectory = true;
@@ -96,7 +96,7 @@ namespace DesktopMatrixCalculator
 
     private void calculateSumeCABToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Addition();
+      Addition(A, B);
     }
 
     private void calculateDifferenceCABToolStripMenuItem_Click(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace DesktopMatrixCalculator
     }
     private void buttonAddAB_Click(object sender, EventArgs e)
     {
-      Addition();
+      Addition(A, B);
     }
     private void buttonSubtractionAB_Click(object sender, EventArgs e)
     {
@@ -172,7 +172,7 @@ namespace DesktopMatrixCalculator
       Subtraction(B, A);
     }
 
-    private void Addition()
+    private void Addition(Matrix A, Matrix B)
     {
       try
       {
@@ -188,6 +188,7 @@ namespace DesktopMatrixCalculator
         statusStripOperations.Refresh();
       }
     }
+
     private void Subtraction(Matrix firstElement, Matrix secondElement)
     {
       try
@@ -204,6 +205,7 @@ namespace DesktopMatrixCalculator
         statusStripOperations.Refresh();
       }
     }
+
     private void Multiplication(Matrix firstElement, Matrix secondElement)
     {
       try
